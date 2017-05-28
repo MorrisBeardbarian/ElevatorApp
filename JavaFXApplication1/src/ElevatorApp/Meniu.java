@@ -61,7 +61,7 @@ public class Meniu{
         parinte.getChildren().add(clm);
         
         //CSS StyleSheet
-        File f = new File("src/javafxapplication1/meniu_style.css");
+        File f = new File("src/ElevatorApp/meniu_style.css");
         parinte.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
 
     }

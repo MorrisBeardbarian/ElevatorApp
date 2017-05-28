@@ -14,6 +14,12 @@ and open the template in the editor.
     -fx-background-repeat: no-repeat;
 }
 
+.config_pane{
+    -fx-background-image: url("../../res/img/rainy_san_francisco.jpg");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
 .menu_button{
    -fx-background-color:transparent; 
    -fx-font: bold italic 30pt "Arial";
