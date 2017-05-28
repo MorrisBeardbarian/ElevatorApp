@@ -16,7 +16,6 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.input.KeyCombination;
-import javafx.scene.input.MouseEvent;
 /**
  *
  * @author marius
@@ -31,7 +30,7 @@ public class ElevatorApp extends Application {
         primaryStage.setTitle("Elevator"); //Title
         StackPane first_stack = new StackPane();
         //CSS StyleSheet
-        File f = new File("src/javafxapplication1/first_style.css");
+        File f = new File("src/ElevatorApp/first_style.css");
         first_stack.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
         //First button
         Button all_press = new Button("Click anywhere to continue");
@@ -52,7 +51,7 @@ public class ElevatorApp extends Application {
             }
         });
         primaryStage.setScene(new Scene(first_stack, Screen.getPrimary().getVisualBounds().getWidth(), Screen.getPrimary().getVisualBounds().getHeight())); //First scene
-        primaryStage.setFullScreen(true); //Fullscreen
+        //primaryStage.setFullScreen(true); //Fullscreen
         primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH); //Disable "Press ESC to exit fullscreen mode" message
         primaryStage.show(); //Start the stage
         stage = primaryStage; //assign stage to a static variable for later control
