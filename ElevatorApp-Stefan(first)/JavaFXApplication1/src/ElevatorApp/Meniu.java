@@ -63,7 +63,9 @@ public class Meniu{
         
         //CSS StyleSheet
         File f = new File("src/ElevatorApp/meniu_style.css");
-        parinte.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
+        
+        parinte.getStylesheets().add(getClass().getResource("meniu_style.css").toExternalForm());
+        //parinte.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
 
     }
     

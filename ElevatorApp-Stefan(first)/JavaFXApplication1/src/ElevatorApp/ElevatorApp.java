@@ -31,7 +31,7 @@ public class ElevatorApp extends Application {
         StackPane first_stack = new StackPane();
         //CSS StyleSheet
         File f = new File("src/ElevatorApp/first_style.css");
-        first_stack.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
+        first_stack.getStylesheets().add(getClass().getResource("first_style.css").toExternalForm());
         //First button
         Button all_press = new Button("Click anywhere to continue");
         //Setam clasa butonului pentru CSS

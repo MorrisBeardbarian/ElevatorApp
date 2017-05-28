@@ -47,19 +47,23 @@ public class Config{
         GridPane gp = new GridPane();
         ScrollPane sc_pane = new ScrollPane();
         
-        sc_pane.getStyleClass().add("config_pane");
+        sc_pane.getStylesheets().add(getClass().getResource("first_style.css").toExternalForm());
         gp.add(back_btn,0,0);
         gp.add(configMall_btn,1,0);
         configMall_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 showMallConfig(gp);
+                gp.add(back_btn,0,0);
+                gp.add(configMall_btn,1,0);
             }
         });
         configElevator_btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 showElevatorConfig(gp);
+                configElevator_btn.setVisible(false);
+                
             }
         });
         back_btn.setOnAction(new EventHandler<ActionEvent>() {
@@ -69,7 +73,6 @@ public class Config{
                 gp.getChildren().clear();
                 gp.add(back_btn,0,0);
                 gp.add(configMall_btn,1,0);
-                gp.add(configElevator_btn,2,0);
             }
         });
         
@@ -77,8 +80,8 @@ public class Config{
         parinte.getChildren().add(sc_pane);
         
         //CSS StyleSheet
-        File f = new File("src/ElevatorApp/meniu_style.css");
-        parinte.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));   
+        //File f = new File("src/ElevatorApp/meniu_style.css");
+        parinte.getStylesheets().add(getClass().getResource("meniu_style.css").toExternalForm());   
     }
     public void showMallConfig(GridPane gp){
         Button save_btn=new Button("Salveaza datele introduse");
@@ -109,6 +112,7 @@ public class Config{
                 gp.getChildren().clear();
                 gp.add(back_btn,0,0);
                 gp.add(configElevator_btn,1,0);
+                configElevator_btn.setVisible(true);
             }
         });
         spring.minHeightProperty().bind(etaje.heightProperty());
